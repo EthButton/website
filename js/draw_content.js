@@ -13,7 +13,7 @@ function update_dash()
 
     if(game.your_click > 0 && game.loaded==0)
     {
-        $('#personal_stat').html('You have been clicked the Button '+game.your_click+'x times. '+url_generator(account)+reff_data(game.reffered_count,game.reffer_pot));
+        $('#personal_stat').html('You have been clicked the Button '+game.your_click+'x times. Best time: '+countdown(game.your_time)+url_generator(account)+reff_data(game.reffered_count,game.reffer_pot));
         game.loaded = 1;
     }
 
@@ -25,7 +25,7 @@ function update_dash()
         let distance = game.expiretime-(game.time+window.windowage);
 
 
-        if(window.windowage<3)
+        if(window.windowage<30)
         $('#pie_button').pietimer('update',delay(3600,distance));
       //  console.log(distance);
 
@@ -74,7 +74,7 @@ function reff_data(count,pot)
 
             if(pot>=0.0001)
             {
-            pot_text = "<br>Total referral share = "+pot+' <i class="fab fa-ethereum"></i>';
+            pot_text = "<br>Your referral share = "+pot+' <i class="fab fa-ethereum"></i>';
             }
 
         return "<br> You have "+count+" referrals. "+pot_text;
@@ -137,7 +137,16 @@ function update_leaderboard()
        for (let index = 0; index < game.leaderboard.length; index++)
        {
         number = index+1;  
-        content += '<tr><th scope="row">'+number+'<td> '+game.leaderboard[index]+'</td></tr>';
+
+        if( parseInt(game.leaderboard[index]) == parseInt(account)){
+            content += '<tr><th scope="row">'+number+'<td> <b>'+game.leaderboard[index]+'</b></td></tr>';
+        }
+        else
+        {
+            content += '<tr><th scope="row">'+number+'<td> '+game.leaderboard[index]+'</td></tr>';  
+        }
+
+
        }  
 
 
