@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
             });
    // WEB3 INIT DONE!
   
-      const contract_address = "0x26268d38aeac890caa5b24f4dbea540b09ad9841";
+      const contract_address = "0x6c9ab3a2cd5a104cec2bf019c7377d16dc54de96";
       var account =  web3.eth.accounts[0];
 
       game = [];
