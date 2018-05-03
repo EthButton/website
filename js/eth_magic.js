@@ -32,7 +32,7 @@ window.addEventListener('load', function() {
       game.reffer_pot = 0;
       game.loaded = 0;
       game.leaderboard = [];
-      game.over = 0;
+      game.over = 1;
       
 
       function referre_manager()
