@@ -138,7 +138,7 @@ function update_leaderboard()
 
        for (let index = 0; index < game.leaderboard.length; index++)
        {
-        number = counter-index;  
+        number = index+1;  
         content += '<tr><th scope="row">'+number+'<td> '+game.leaderboard[index]+'</td></tr>';
        }  
 
