@@ -113,7 +113,7 @@
 		"outputs": [
 			{
 				"name": "_addr",
-				"type": "address[10]"
+				"type": "address[30]"
 			}
 		],
 		"payable": false,
