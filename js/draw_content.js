@@ -85,7 +85,7 @@ function reff_data(count,pot)
 function url_generator(address)
 {
 
-  return '<br> Your referral link: '+location.protocol + '//' + location.host + location.pathname+'?reff='+address;
+  return '<br> Your referral link: <a href="'+location.protocol + '//' + location.host + location.pathname+'?reff='+address+'" target="_blank"> '+location.protocol + '//' + location.host + location.pathname+'?reff='+address+'</a>';
 
 }
 

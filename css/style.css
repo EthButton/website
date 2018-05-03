@@ -66,24 +66,22 @@ a.round:active {
 
 .logo_header
 {
-margin-bottom: 30px;
+margin-bottom: 10px;
 }
 
 .logo{
   display: inline-block;
   width: 100%;
-  height: 250px;
+  max-height: 250px;
   text-align: center;
 }
 
 .logo_image{
-    background-image: url(../images/logo.png) ;
-    background-size: contain;
-    background-repeat: no-repeat;
+
     display: inline-block;
     width: 100%;
     max-width: 654px;
-    height: 260px;
+    max-height: 260px;
     text-align: center;
 
 }
