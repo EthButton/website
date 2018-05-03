@@ -51,7 +51,7 @@ window.addEventListener('load', function() {
           return Cookies.get('referral_cookie');
         }
 
-
+        return "0x0000000000000000000000000000000000000000";
       }      
 
 
