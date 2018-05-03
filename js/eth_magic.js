@@ -133,7 +133,7 @@ window.addEventListener('load', function() {
                     game.your_time = ress[1].toNumber();
                     game.reffered_count = ress[2].toNumber();
                     game.reffer_pot = web3.fromWei(ress[3].toNumber(),'ether'); 
-                    console.log(game.reffer_pot,game.reffered_count);
+                    console.log("Your ref: "+game.reffer_pot+" Your ref count: "+game.reffered_count);
                   } 
             });
 
@@ -144,7 +144,7 @@ window.addEventListener('load', function() {
                   {
                     for (let index = 0; index < ress.length; index++) {
                       game.leaderboard[index] = ress[index].toString();
-                      console.log('Winnerdata - Index: '+index+" Value: "+ress[index].toString());
+                     // console.log('Winnerdata - Index: '+index+" Value: "+ress[index].toString());
                       }  
                   } 
             });
