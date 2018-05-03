@@ -84,11 +84,9 @@ function reff_data(count,pot)
 
 function url_generator(address)
 {
-  if(game.referee == "")  
-  {
-  return '<br> Your referral link: '+window.location.href+'?reff='+address;
-  }
-  return "";
+
+  return '<br> Your referral link: '+location.protocol + '//' + location.host + location.pathname+'?reff='+address;
+
 }
 
 function countdown (distance)
@@ -105,8 +103,8 @@ function countdown (distance)
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the element with id="demo"
-        let string = hours + "h "
-        + minutes + "m " + seconds + "s ";
+        let string = 
+        + minutes + "min " + seconds + "sec ";
 
         if(days>0)
         {

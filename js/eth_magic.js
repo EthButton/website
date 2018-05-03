@@ -20,7 +20,9 @@ window.addEventListener('load', function() {
       game.expiretime = 0;
       game.price = 0;
       game.ethbalance = 0;
-      game.referee = getParameterByName('reff');
+
+      game.referee = referre_manager();
+
       window.windowage = 0;
       game.ethpot = 0;
       game.ethclickprice = 0;
@@ -32,6 +34,27 @@ window.addEventListener('load', function() {
       game.leaderboard = [];
       game.over = 0;
       
+
+      function referre_manager()
+      {
+        let refferal =  getParameterByName('reff');
+
+        if(refferal)
+        {
+          Cookies.remove("referral_cookie", { path: '/' });
+          Cookies.set("referral_cookie", refferal, { expires: 7, path: '/' });
+          return refferal;
+        }
+
+        if(Cookies.get('referral_cookie'))
+        {
+          return Cookies.get('referral_cookie');
+        }
+
+
+      }      
+
+
 
 
       function startApp(web3) 
@@ -201,6 +224,8 @@ window.addEventListener('load', function() {
 
           ethbutton_contract.ButtonClicked.sendTransaction(game.referee,{from:account,value: game.clickprice,gasPrice: game.default_gas_price},function(err,ress)
           {
+
+            $('#pie_button').pietimer('pause');
             waitForReceipt(ress, function (receipt) 
             {
               console.log('Force!');
@@ -320,4 +345,16 @@ function waitForReceipt(hash, callback) {
 function toETH(number)
 {
   return web3.fromWei(number,'ether');
+}
+
+function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(window.location.href);
+  if (results === null) {
+      return "";
+  } else {
+      return decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
 }
