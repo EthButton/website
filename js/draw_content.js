@@ -26,7 +26,7 @@ function update_dash()
 
 
         if(window.windowage<3)
-        $('#pie_button').pietimer('update',delay(300,distance));
+        $('#pie_button').pietimer('update',delay(3600,distance));
       //  console.log(distance);
 
         $('#happen_in').html(countdown(distance));
@@ -51,7 +51,7 @@ function update_dash()
 $(function(){
 
 $('#pie_button').pietimer({
-    seconds: 300,
+    seconds: 3600,
     height: 200,
     width: 200,
     is_reversed: true
