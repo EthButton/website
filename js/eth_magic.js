@@ -11,7 +11,7 @@ window.addEventListener('load', function() {
             });
    // WEB3 INIT DONE!
   
-      const contract_address = "0x8941287d33650f5506ad30dad9c5ef9405021f04";
+      const contract_address = "0x530ad9ee0fd14a26a8b1132c840f59f344e54f90";
       var account =  web3.eth.accounts[0];
 
       game = [];
@@ -32,7 +32,7 @@ window.addEventListener('load', function() {
       game.reffer_pot = 0;
       game.loaded = 0;
       game.leaderboard = [];
-      game.over = 1;
+      game.over = 0;
       
 
       function referre_manager()
