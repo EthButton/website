@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ETHButton | The Button Game!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ETHButton | The Button game!"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js" ></script>
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+        <script src="./js/jquery.pietimer.js" ></script>
+        <script src="./js/referral.js" ></script>
+
+        <script src="./js/constants/game_constant.js" ></script>
+        <script src="./js/contract/abi.js" ></script>
+        <script src="./js/eth_magic.js" ></script>
+        <script src="./js/buttons.js" ></script>
+        <script src="./js/draw_content.js" ></script>
+        
+        
+
+        <link rel="stylesheet" href="./css/style.css">    
+            
+    </head>
+    <body>
+      
+  
+<header>
+
+    <div class="container">
+        <div class="row logo_header">
+          <div class="col-12">
+            <p class="logo">
+              <a class="logo_image"></a>
+            </p>
+          </div>
+    </header>
+
+
+    <main role="main" class="container">
+
+        <div class="row"> 
+            <div class="col-12 timer">
+                <p>Something will happen in: <span id="happen_in">59min 21sec</span></p>
+            </div>
+          </div>
+
+              <div class="row"> 
+                <div class="col-12 pull-center button-space">
+                    
+                  <p id="pie_button" style="height: 230px;"></p>
+
+                    <div class="dont">
+                      <h6>ETH Button <span id="clicked"></span></h6>
+                      <button type="button" id="eth_button" class="btn btn-secondary btn-lg">Loading... <i class="fab fa-ethereum"></i></button>
+                      <h5>Total pot currently: <span id="eth_total_pot">Loading...</span> <i class="fab fa-ethereum"></i>!</h5>
+                      <p id="personal_stat"></p>
+                      <debug id="debug" style="display: none">
+                        <div class="divider_small"></div>
+                        <button type="button" id="debug_gameover" class="btn btn-secondary btn-lg btn-block beauty_button_big">GameOver</button>
+                        <button type="button" id="debug_devfund" class="btn btn-secondary btn-lg btn-block beauty_button_big">DevFund</button>
+                      </debug>  
+                      </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <h5>Last 30 Clicker:</h5>
+                  <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Address</th>
+                      </tr>
+                    </thead>
+                    <tbody id="last_clickers">
+                      <tr>
+                        <th scope="row">30</th>
+                        <td>........</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                </div>
+                <div class="col-6">
+                  <h5>About:</h5>
+                  <p>
+                      <b>How to play:</b><br>
+
+                      1. Push the Button!<br>
+                      2. Send your referral link to your friends, and get 10% of the click price when they press the button!<br>
+                      3. You can only be referred if you pushed the button at least once!<br>
+                      3. Don't let the timer run out or else...<br>
+                      <br>
+                      <b>Rules:</b><br>
+                      1. The button can be clicked any number of times, there is no hard limit.<br>
+                      2. 80% of each click price goes to the final Reward. This will be distributed equally between the last 30 player who pressed the button.<br>
+                      3. 10% of each click goes to the player you have referred. You cannot refer yourself! Invite as many friends as possible and profit!<br>
+                      3.1. You have to push the Button at least once, in order to be able to receive referral money!<br>
+                      4. The starting click price is 0.01ETH, increased by 0.01ETH every 30 clicks.<br>
+                      <br>
+                      NOTE: 100% of the first 30 clicks goes to the Reward!<br>
+                      GAME EXAMPLE: 180 players pushed the button. (30*0.01 + 30*0.02*0.8 + ... + 30*0.06*0.8) = 4.14 ETH will be distributed. Every winner will get 0.138ETH(230% interest rate).<br>
+                      REFERAL EXAMPLE: 5 players used your link to push the Button. They payed 0.02, 0.02, 0.05, 0.05, 0.1 you will get (0.02 + 0.02 + 0.05 + 0.05 + 0.1) * 0.1 = 0.024ETH. If you pressed the button for 0.1ETH.
+                      <br>    If you pressed the button for 0.01ETH it is a 240% interest rate from only 4 referrals! 
+                  </p>
+                </div>
+              </div>
+    </main>
+    
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Crated by Ethereum&Reddit Fans!</span>
+      </div>
+    </footer>
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+    </body>
+</html>

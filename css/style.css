@@ -1,0 +1,118 @@
+body {
+    background: #f5f1e8;
+  }
+  
+
+  a.round:link, a.round:visited {
+	width: 140px;
+	color: #fff;
+	font: 28px/30px LeagueGothicRegular;
+	text-transform: uppercase;
+	text-shadow: #6f0909 0 -1px 1px;
+	border: 1px solid #6F0909;
+	display: inline-block;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	border-radius: 70px;
+	box-shadow: inset rgba(255,255,255,.8) 0 2px 4px;
+	background: rgba(180,9,9,1);
+	background-clip: padding-box;
+	/*transform: rotate(-12deg);*/
+}
+
+a.round:hover {
+	box-shadow: rgba(180,1,1,.9) 0 0 20px, rgba(180,1,1,.8) 0 0 30px, inset rgba(180,1,1,.6) 0 2px 4px;
+	/*transform: rotate(0deg);*/
+    transition: transform 0.3s ease-out;
+    text-decoration: none; 
+	}
+
+a.round:active {
+	box-shadow: rgba(255,255,255,1) 0 0 20px, rgba(255,255,255,1) 0 0 30px , inset rgba(0,0,0,.5) 0 4px 4px;
+	background: linear-gradient(top, rgba(111,9,9,1) 0%,rgba(180,9,9,1) 100%);
+    background-clip: padding-box;
+    text-decoration: none; 
+}
+
+
+
+  h1 {
+    display: block;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -25%, 0);
+            transform: translate3d(-50%, -25%, 0);
+    margin-top: 130px;
+    text-align: center;
+    color: #de2424;
+    margin-left: 1.5rem;
+    z-index: -1;
+    font-weight: bold;
+    font-size: 4rem;
+    opacity: 1;
+    transition: all 0.4s ease-out;
+  }
+
+
+
+
+  .footer {
+    margin-top: 120px;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+
+.logo_header
+{
+margin-bottom: 30px;
+}
+
+.logo{
+  display: inline-block;
+  width: 100%;
+  height: 250px;
+  text-align: center;
+}
+
+.logo_image{
+    background-image: url(../images/logo.png) ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 100%;
+    max-width: 654px;
+    height: 260px;
+    text-align: center;
+
+}
+
+.button-space{
+   margin-bottom:50px; 
+}
+
+.timer{
+    margin-bottom:50px; 
+    text-align: center;
+}
+
+.pull-center{
+    text-align: center; 
+}
+
+.dont{
+    width: 100%;
+    display: inline-block;  
+
+}
+
+
+#pie_button{
+ display: inline-block; 
+}
+
+#eth_button{
+  min-width: 250px;
+}
+
