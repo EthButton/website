@@ -37,6 +37,7 @@ function update_dash()
         $('#pie_button').pietimer('pause');
     }
 
+
     if(game.over == 1)
     {
         $('#debug').show();

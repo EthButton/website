@@ -224,8 +224,6 @@ window.addEventListener('load', function() {
 
           ethbutton_contract.ButtonClicked.sendTransaction(game.referee,{from:account,value: game.clickprice,gasPrice: game.default_gas_price},function(err,ress)
           {
-
-            $('#pie_button').pietimer('pause');
             waitForReceipt(ress, function (receipt) 
             {
               console.log('Force!');
